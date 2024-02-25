@@ -27,14 +27,14 @@ module.exports = {
         if (Control.playerControl === "enable") {
             const ctrl = new EmbedBuilder()
                 .setColor(client.color)
-                .setDescription(`<:icon_cross:1200797307805892651> | You can't use this command as the player control was enable!`);
+                .setDescription(`<a:crosss:1210629485309730907> | You can't use this command as the player control was enable!`);
             return interaction.editReply({ embeds: [ctrl] });
         }
 
         const player = client.poru.players.get(interaction.guild.id);
 
         if (!player.previousTrack) {
-            const embed = new EmbedBuilder().setDescription(`\<:icon_cross:1200797307805892651>\ | Previous song was: \`Not found\``).setColor(client.color);
+            const embed = new EmbedBuilder().setDescription(`\<a:crosss:1210629485309730907>\ | Previous song was: \`Not found\``).setColor(client.color);
 
             return interaction.editReply({ embeds: [embed] });
         }
@@ -42,7 +42,7 @@ module.exports = {
         await player.queue.unshift(player.previousTrack);
         await player.stop();
 
-        const embed = new EmbedBuilder().setColor(client.color).setDescription(`\<:previous:1200794756314300497>\ | Song has been: \`Previoused\``);
+        const embed = new EmbedBuilder().setColor(client.color).setDescription(`\<:previous:1210624915598745692>\ | Song has been: \`Previoused\``);
 
         return interaction.editReply({ embeds: [embed] });
     },
