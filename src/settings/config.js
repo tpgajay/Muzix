@@ -2,11 +2,11 @@ require("dotenv").config();
 
 module.exports = {
 
-  token: process.env.TOKEN || "", // <==== PASTE YOU TOKEN
-  prefix: process.env.PREFIX || ".", // <==== SET YOU PRERIX BOT [ OWNER COMMANDS ]
-  color: process.env.EMBED_COLOR || "#2f3136", // <==== YOU EMBEDED HEX COLOR
-  owner: process.env.OWNER_ID || "1173547185758015498", // <==== BOTS OWNER ID
-  guildLogs: process.env.GUILD_LOGS || "1198586029343518820", // <==== YOUR SERVER JOIN LEFT LOGS CHANNEL ID
+  token: process.env.TOKEN || "const mySecret = process.env['TOKEN']", // <==== PASTE YOU TOKEN
+  prefix: process.env.PREFIX || "M!", // <==== SET YOU PRERIX BOT [ OWNER COMMANDS ]
+  color: process.env.EMBED_COLOR || "#f308e3", // <==== YOU EMBEDED HEX COLOR
+  owner: process.env.OWNER_ID || "const mySecret = process.env['OWNER_ID']", // <==== BOTS OWNER ID
+  guildLogs: process.env.GUILD_LOGS || "const mySecret = process.env['GUILD_LOGS']", // <==== YOUR SERVER JOIN LEFT LOGS CHANNEL ID
   leaveTimeout: process.env.LEAVE_TIMEOUT || "20000", // <==== SET LEAVE TIMEOUT WHEN BOT WAS ALONE || 1000 = 1sec
   disableYouTube: parseBoolean(process.env.DISABLE_YOUTUBE || "false"), // <==== SET "TRUE OR FALSE" | ENABLE/DISABLE YOUTUBE FEATURES. DISABLING THIS WILL MAKE "AUTOPLAY" COMMANDS USELESS!!!
 
@@ -35,10 +35,10 @@ module.exports = {
 
 
   mongoUri: process.env.MONGO_URI || "mongodb+srv://pee33:wnn99e@cluster0.fgivnid.mongodb.net/?retryWrites=true&w=majority", 
-  supportUrl: process.env.SUPPORT_URL || "https://discord.gg/7MEHnM6T87", 
-  voteUrl: process.env.VOTE_URL || "https://discord.gg/7MEHnM6T87",
-  inviteUrl: process.env.INVITE_URL || "https://discord.com/api/oauth2/authorize?client_id=1197585882803343391&permissions=40271764260928&scope=bot%20applications.commands", 
-  imageUrl: process.env.IMAGE_URL || "https://media.discordapp.net/attachments/1162795987014787162/1197198433962971156/pngtree-pair-of-headphones-on-the-water-at-nighttime-image_2931863.png?ex=65c39f6d&is=65b12a6d&hm=e94858f4cbfc92ee4868da52953a4015b2c2703c5f0e12f2e144d446be72d8fe&=&format=webp&quality=lossless&width=800&height=448",
+  supportUrl: process.env.SUPPORT_URL || "https://discord.com/invite/ByeTFze94A", 
+  voteUrl: process.env.VOTE_URL || "https://discord.com/invite/ByeTFze94A",
+  inviteUrl: process.env.INVITE_URL || "https://discord.com/oauth2/authorize?client_id=1210606381950836736&scope=bot%20applications.commands&permissions=2146958847", 
+  imageUrl: process.env.IMAGE_URL || "https://cdn.discordapp.com/attachments/1210617159894433932/1210618271808618616/Picsart_24-02-23_21-34-27-269.jpg?ex=65eb3720&is=65d8c220&hm=a1eb4e507bff13b9710556bfca3c5b8c4a8c1c2d264917653c246ab6681b3a50&",
 };
 
 function parseBoolean(value) {
@@ -53,4 +53,3 @@ function parseBoolean(value) {
       return false;
   }
 }
-
