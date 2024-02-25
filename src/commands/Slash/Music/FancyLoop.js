@@ -45,7 +45,7 @@ module.exports = {
         if (Control.playerControl === "enable") {
             const ctrl = new EmbedBuilder()
                 .setColor(client.color)
-                .setDescription(`\ <:icon_cross:1200797307805892651>\ | You can't use this command as the player control was enable!`);
+                .setDescription(`\ <a:crosss:1210629485309730907>\ | You can't use this command as the player control was enable!`);
             return interaction.editReply({ embeds: [ctrl] });
         }
 
@@ -56,13 +56,13 @@ module.exports = {
             if (player.loop === "TRACK") {
                 await player.setLoop("NONE");
 
-                const embed = new EmbedBuilder().setColor(client.color).setDescription(`\ <a:reset:1200812235753259090>\ | Loop mode has been: \`Disabled\``);
+                const embed = new EmbedBuilder().setColor(client.color).setDescription(`\ <:loop:1210623258064326726> | Loop mode has been: \`Disabled\``);
 
                 return interaction.editReply({ embeds: [embed] });
             } else {
                 await player.setLoop("TRACK");
 
-                const embed = new EmbedBuilder().setColor(client.color).setDescription(`\ <a:reset:1200812235753259090>\ | Loop mode has been set to: \`Current\``);
+                const embed = new EmbedBuilder().setColor(client.color).setDescription(`\ <:loop:1210623258064326726>\ | Loop mode has been set to: \`Current\``);
 
                 return interaction.editReply({ embeds: [embed] });
             }
@@ -70,13 +70,13 @@ module.exports = {
             if (player.loop === "QUEUE") {
                 await player.setLoop("NONE");
 
-                const embed = new EmbedBuilder().setColor(client.color).setDescription(`\ <a:reset:1200812235753259090>\ | Loop mode has been: \`Disabled\``);
+                const embed = new EmbedBuilder().setColor(client.color).setDescription(`\ <:loop:1210623258064326726>\ | Loop mode has been: \`Disabled\``);
 
                 return interaction.editReply({ embeds: [embed] });
             } else {
                 player.setLoop("QUEUE");
 
-                const embed = new EmbedBuilder().setColor(client.color).setDescription(`\ <a:reset:1200812235753259090>\ | Loop mode has been set to: \`Queue\``);
+                const embed = new EmbedBuilder().setColor(client.color).setDescription(`\ <:loop:1210623258064326726>\ | Loop mode has been set to: \`Queue\``);
 
                 return interaction.editReply({ embeds: [embed] });
             }
