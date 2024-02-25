@@ -27,7 +27,7 @@ module.exports = {
         const ytUri = /^(https?:\/\/)?(www\.)?(m\.)?(music\.)?(youtube\.com|youtu\.?be)\/.+$/gi.test(currentsong.uri);
 
         if (!ytUri) {
-            const embed = new EmbedBuilder().setDescription(`\ <:icon_cross:1200797307805892651>\ | Autoplay feature only support YouTube!`).setColor(client.color);
+            const embed = new EmbedBuilder().setDescription(`\ <a:crosss:1210629485309730907>\ | Autoplay feature only support YouTube!`).setColor(client.color);
 
             return interaction.editReply({ embeds: [embed] });
         }
