@@ -36,13 +36,13 @@ module.exports = {
         const Duration = formatDuration(position * 1000);
 
         if (!player.currentTrack.info.isSeekable) {
-            const embed = new EmbedBuilder().setColor(client.color).setDescription(`\<:icon_cross:1200797307805892651>\ | Song is not seekable`);
+            const embed = new EmbedBuilder().setColor(client.color).setDescription(`\<a:crosss:1210629485309730907>\ | Song is not seekable`);
 
             return interaction.editReply({ embeds: [embed] });
         } else {
             await player.seekTo(position * 1000);
 
-            const embed = new EmbedBuilder().setColor(client.color).setDescription(`\<a:right_arrow:1200814300265205791>\ | Song seeked to: \`${Duration}\``);
+            const embed = new EmbedBuilder().setColor(client.color).setDescription(`\<:previous:1210625055965450290>\ | Song seeked to: \`${Duration}\``);
 
             return interaction.editReply({ embeds: [embed] });
         }
