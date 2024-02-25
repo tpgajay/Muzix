@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello Express app!')
+  res.send('Muzix Tho Mamuluga Undadu!')
 });
 app.listen(3000, () => {
   console.log('[INFO] Bot Online!');
@@ -15,10 +15,6 @@ module.exports = client;
 
 /**
  * @INFO
- * Bot Coded by WhoFancy?#0000 | https://dsc.gg/allpbprivate
- * @INFO
- * Work for Fancy Music | https://dsc.gg/allpbprivate
- * @INFO
- * Please Mention Us Fancy Music, When Using This Code!
+ * Bot Coded by itz.frosty.owner | https://discord.com/invite/ByeTFze94A
  * @INFO
  */
