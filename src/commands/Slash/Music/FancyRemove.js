@@ -33,14 +33,14 @@ module.exports = {
         const track = interaction.options.getNumber("position");
 
         if (track > player.queue.length) {
-            const embed = new EmbedBuilder().setColor(client.color).setDescription(`\<:icon_cross:1200797307805892651>\ | Song was not found`);
+            const embed = new EmbedBuilder().setColor(client.color).setDescription(`\<a:crosss:1210629485309730907>\ | Song was not found`);
 
             return interaction.editReply({ embeds: [embed] });
         }
 
         await player.queue.remove(track - 1);
 
-        const embed = new EmbedBuilder().setColor(client.color).setDescription(`<:Check:1200809259928129547> | Song has been: \`Removed\``);
+        const embed = new EmbedBuilder().setColor(client.color).setDescription(`<a:check:1210630091441180783> | Song has been: \`Removed\``);
 
         return interaction.editReply({ embeds: [embed] });
     },
