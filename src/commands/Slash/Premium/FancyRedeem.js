@@ -119,22 +119,22 @@ module.exports = {
 
             const embed = new EmbedBuilder()
                 .setAuthor({ name: `Premium Redeemed!`, iconURL: client.user.displayAvatarURL() })
-                .setDescription(`Conratulations <:love_Zyrex:1200808808625213560> ${interaction.member}. You've successfully redeem premium code with the following details.`)
+                .setDescription(`Conratulations <a:1hearts:1210940803141345301> ${interaction.member}. You've successfully redeem premium code with the following details.`)
                 .setThumbnail(interaction.user.displayAvatarURL())
                 .setColor(client.color)
                 .setTimestamp();
 
             if (user.premium.plan === "lifetime") {
                 embed.addFields([
-                    { name: `<:zyrex_Premium:1200808463035551825> | Redeemed By`, value: `\`\`\`${interaction.member.displayName}\`\`\``, inline: true },
-                    { name: `<:plan_Zyrex:1200808535601188964> | Plan Type`, value: `\`\`\`${user.premium.plan}\`\`\``, inline: true },
-                    { name: `<:active_Zyrex:1200808630769954916> | Expired Time`, value: `\`\`\`Never\`\`\``, inline: false },
+                    { name: `<a:premium:1210939306185597029> | Redeemed By`, value: `\`\`\`${interaction.member.displayName}\`\`\``, inline: true },
+                    { name: `<:plan_Zyrex:1210939861981208646> | Plan Type`, value: `\`\`\`${user.premium.plan}\`\`\``, inline: true },
+                    { name: `<:active_Zyrex:1210939632712417341> | Expired Time`, value: `\`\`\`Never\`\`\``, inline: false },
                 ]);
             } else {
                 embed.addFields([
-                    { name: `<:zyrex_Premium:1200808463035551825> | Redeemed By`, value: `\`\`\`${interaction.member.displayName}\`\`\``, inline: true },
-                    { name: `<:plan_Zyrex:1200808535601188964> | Plan Type`, value: `\`\`\`${user.premium.plan}\`\`\``, inline: true },
-                    { name: `<:active_Zyrex:1200808630769954916> | Expired Time`, value: `\`\`\`${expires}\`\`\``, inline: false },
+                    { name: `<a:premium:1210939306185597029> | Redeemed By`, value: `\`\`\`${interaction.member.displayName}\`\`\``, inline: true },
+                    { name: `<:plan_Zyrex:1210939861981208646> | Plan Type`, value: `\`\`\`${user.premium.plan}\`\`\``, inline: true },
+                    { name: `<:active_Zyrex:1210939632712417341> | Expired Time`, value: `\`\`\`${expires}\`\`\``, inline: false },
                 ]);
             }
 
