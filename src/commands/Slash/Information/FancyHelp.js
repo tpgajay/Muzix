@@ -30,7 +30,7 @@ module.exports = {
         await interaction.deferReply({ ephemeral: false });
 
         const row2 = new ActionRowBuilder()
-            .addComponents(new ButtonBuilder().setLabel("Sponsor").setURL('https://discord.gg/7MEHnM6T87').setStyle(ButtonStyle.Link))
+            .addComponents(new ButtonBuilder().setLabel("Sponsor").setURL('https://discord.com/invite/8KuYB7AC9G').setStyle(ButtonStyle.Link))
             .addComponents(new ButtonBuilder().setLabel("Support Server").setURL(supportUrl).setStyle(ButtonStyle.Link));
 
         const categories = readdirSync("./src/commands/Slash/");
@@ -42,10 +42,10 @@ module.exports = {
             })
             .setColor(client.color)
             .setDescription(
-                `👋🏻 **${interaction.member}**, Myself **${client.user}** \n\n<:F_arrow:1200816267343446106> **${client.user.username}**\n**An Advanced Discord MusicBot with User-Friendly Interface. I Promise you that I will try my Best to Give you the beat of Music Clearly.** \n\n<:stats:1200816936779518093> **__Category Fancy__**\n<:info:1200796269887635466>  **Information**\n<:music:1200817443623411803>  **Music**\n<:Premium:1200817621503840276> **Premium**\n<:developer:1200817682971373783>  **Developer**\n<:filters:1200817771118862547>  **Filters**\n\n<:ping:1200817860432371852> **__Status__:  ${client.user.username}**\n<:servers:1200817913859416155>  Servers: **${client.guilds.cache.size}**\n<:ping:1200817860432371852>  Ping: **${Math.round(client.ws.ping)}ms**\n`
+                `👋🏻 **${interaction.member}**, Myself **${client.user}** \n\n<:hii:1210787751012859935> **${client.user.username}**\n**An Advanced Discord MusicBot with User-Friendly Interface. I Promise you that I will try my Best to Give you the beat of Music Clearly.** \n\n<a:server:1210635630061555743> __Category Fancy__\n<a:info:1210623093333295166>  Information\n<a:dots:1210785677848092722>  Music\n<:StopMusic:1210621813089112134> Premium\n<a:dots:1210785677848092722>  Developer\n<a:dots:1210785677848092722>  Filters\n\n<a:dots:1210785677848092722> __Status__:  ${client.user.username}\n<a:dots:1210785677848092722>  Servers: ${client.guilds.cache.size}\n<a:dots:1210785677848092722>  Ping: ${Math.round(client.ws.ping)}ms\n`
             )
             .setFooter({
-                text: `Made with 💖 And TEC`,
+                text: `Made with 💖 And Frosty`,
                 iconURL: client.user.displayAvatarURL({ dynamic: true }),
             })
             .setTimestamp();
@@ -84,7 +84,7 @@ module.exports = {
                                 iconURL: interaction.guild.iconURL({ dynamic: true }),
                             })
                             .setDescription(
-                                `\ \n\n**\<:F_arrow:1200816267343446106> ${
+                                `\ \n\n**\<:arrows:1210780302696386581> ${
                                     directory.slice(0, 1).toUpperCase() + directory.slice(1)
                                 } Commands:**\n${client.slashCommands
                                     .filter((c) => c.category === directory)
@@ -93,7 +93,7 @@ module.exports = {
                             )
                             .setColor(client.color)
                             .setFooter({
-                                text: `Made with 💖 & TEC | Total Commands: ${
+                                text: `Made with 💖 & Frosty | Total Commands: ${
                                     client.slashCommands.filter((c) => c.category === directory).size
                                 }`,
                                 iconURL: client.user.displayAvatarURL({ dynamic: true }),
