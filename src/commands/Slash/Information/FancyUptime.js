@@ -33,8 +33,8 @@ module.exports = {
       await interaction.deferReply({ ephemeral: false });
 
         const embed = new EmbedBuilder()
-            .setTitle(`<a:disk:1200807327616479364> Uptime Information!`)
-            .setDescription(`\`\`\`yml\n❓ Status : Online\n⏲ Uptime : ${pretty(client.uptime)}\n<:System:1200815003721273344> System Uptime : ${dDisplay + hDisplay + mDisplay + sDisplay}\n\`\`\``)
+            .setTitle(`<a:2disko:1210936901893099550> Uptime Information!`)
+            .setDescription(`\`\`\`yml\n❓ Status : Online\n⏲ Uptime : ${pretty(client.uptime)}\n • System Uptime : ${dDisplay + hDisplay + mDisplay + sDisplay}\n\`\`\``)
             .setColor(client.color);
 
         interaction.followUp({ embeds: [embed] });
