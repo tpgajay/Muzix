@@ -15,8 +15,8 @@ module.exports = {
         inVc: true,
         sameVc: true,
         player: true,
-        current: false,
-        owner: false,
+        current: true,
+        owner: true,
         premium: true,
     },
     run: async (client, interaction) => {
@@ -35,7 +35,7 @@ module.exports = {
         } else if (!data) {
             const user = await User.findOne({ Id: interaction.user.id });
 
-            let expired = user.premium.expiresAt; // this will make the command activated til the user premium expired, Disable this if you set the 247 setting remium to false
+            let expired = user.premium.expiresAt; // this will make the command activated til the user premium expired, Disable this if you set the 247 setting premium to false
 
             const newData = await Reconnect.create({
                 guild: player.guildId,
