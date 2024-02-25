@@ -1,10 +1,19 @@
-const { EmbedBuilder } = require("discord.js");
-const GControl = require("../../../settings/models/Control.js");
+const { ApplicationCommandOptionType, EmbedBuilder } = require("discord.js");
+const formatDuration = require("../../../structures/FormatDuration.js");
 
 module.exports = {
-    name: "shuffle",
-    description: "Shuffle the current player queue.",
+    name: "seek",
+    description: "Seek the current played song.",
     category: "Music",
+    options: [
+        {
+            name: "seconds",
+            description: "New position length of the song.",
+            type: ApplicationCommandOptionType.Number,
+            required: true,
+            min_value: 0,
+        },
+    ],
     permissions: {
         bot: [],
         channel: [],
@@ -14,33 +23,26 @@ module.exports = {
         inVc: true,
         sameVc: true,
         player: true,
-        current: false,
+        current: true,
         owner: false,
         premium: false,
     },
     run: async (client, interaction) => {
         await interaction.deferReply({ ephemeral: true });
 
-        const Control = await GControl.findOne({ guild: interaction.guild.id });
-
-        // When button control "enable", this will make command unable to use. You can delete this
-        if (Control.playerControl === "enable") {
-            const ctrl = new EmbedBuilder()
-                .setColor(client.color)
-                .setDescription(`<a:crosss:1210629485309730907> | You can't use this command as the player control was enable!`);
-            return interaction.editReply({ embeds: [ctrl] });
-        }
-
         const player = client.poru.players.get(interaction.guild.id);
 
-        if (!player.queue.length) {
-            const embed = new EmbedBuilder().setColor(client.color).setDescription(`\<a:crosss:1210629485309730907>\ | Queue was: \`Empty\``);
+        const position = interaction.options.getNumber("seconds", true);
+        const Duration = formatDuration(position * 1000);
+
+        if (!player.currentTrack.info.isSeekable) {
+            const embed = new EmbedBuilder().setColor(client.color).setDescription(`\<a:crosss:1210629485309730907>\ | Song is not seekable`);
 
             return interaction.editReply({ embeds: [embed] });
         } else {
-            await player.queue.shuffle();
+            await player.seekTo(position * 1000);
 
-            const embed = new EmbedBuilder().setColor(client.color).setDescription(`\`🔀\` | Queue has been: \`Shuffled\``);
+            const embed = new EmbedBuilder().setColor(client.color).setDescription(`\<:previous:1210625055965450290>\ | Song seeked to: \`${Duration}\``);
 
             return interaction.editReply({ embeds: [embed] });
         }
