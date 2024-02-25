@@ -24,7 +24,7 @@ module.exports = {
 
         await player.filters.setNightcore(true);
 
-        const embed = new EmbedBuilder().setDescription(`\<a:filter:1200818160828420130>\ | Filter has been set to: \`Nightcore\``).setColor(client.color);
+        const embed = new EmbedBuilder().setDescription(`\<a:filter:1210779838269362237>\ | Filter has been set to: \`Nightcore\``).setColor(client.color);
 
 
         return interaction.editReply({ embeds: [embed] });
