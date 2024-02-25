@@ -25,7 +25,7 @@ module.exports = {
 
         await player.setVolume(500);
 
-        const embed = new EmbedBuilder().setDescription(`\<a:filter:1200818160828420130>\ | Filter has been set to: \`EarRape\``).setColor(client.color);
+        const embed = new EmbedBuilder().setDescription(`\<a:filter:1210779838269362237>\ | Filter has been set to: \`EarRape\``).setColor(client.color);
 
      
         return interaction.editReply({ embeds: [embed] });
