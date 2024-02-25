@@ -3,8 +3,8 @@ require("dotenv").config();
 module.exports = {
 
   TOKEN: "",
-  ownerID: ["1210833599440625684", ""],
-  guildLogs: process.env.GUILD_LOGS || "const mySecret = process.env['GUILD_LOGS']", // <==== YOUR SERVER JOIN LEFT LOGS CHANNEL ID
+  ownerID: "",
+  guildLogs: "",
   leaveTimeout: process.env.LEAVE_TIMEOUT || "20000", // <==== SET LEAVE TIMEOUT WHEN BOT WAS ALONE || 1000 = 1sec
   disableYouTube: parseBoolean(process.env.DISABLE_YOUTUBE || "false"), // <==== SET "TRUE OR FALSE" | ENABLE/DISABLE YOUTUBE FEATURES. DISABLING THIS WILL MAKE "AUTOPLAY" COMMANDS USELESS!!!
 
