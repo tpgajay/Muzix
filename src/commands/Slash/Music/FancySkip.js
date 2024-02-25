@@ -2,8 +2,8 @@ const { EmbedBuilder } = require("discord.js");
 const GControl = require("../../../settings/models/Control.js");
 
 module.exports = {
-    name: "skip",
-    description: "Skip the current played song.",
+    name: "stop",
+    description: "Stop or disconnect the player.",
     category: "Music",
     permissions: {
         bot: [],
@@ -19,12 +19,12 @@ module.exports = {
         premium: false,
     },
     run: async (client, interaction) => {
-        await interaction.deferReply({ ephemeral: true });
+        await interaction.deferReply({ ephemeral: false });
 
         const Control = await GControl.findOne({ guild: interaction.guild.id });
 
         // When button control "enable", this will make command unable to use. You can delete this
-        if (Control.playerControl === "enable") {
+        if (Control.playerControl === "disable") {
             const ctrl = new EmbedBuilder()
                 .setColor(client.color)
                 .setDescription(`<a:crosss:1210629485309730907> | You can't use this command as the player control was enable!`);
@@ -33,16 +33,12 @@ module.exports = {
 
         const player = client.poru.players.get(interaction.guild.id);
 
-        if (!player || player.queue.size == 0) {
-            const embed = new EmbedBuilder().setDescription(`<a:crosss:1210629485309730907> | Next song was: \`Not found\``).setColor(client.color);
+        if (player.message) await player.message.delete();
 
-            return interaction.editReply({ embeds: [embed] });
-        } else {
-            await player.stop();
+        await player.destroy();
 
-            const embed = new EmbedBuilder().setColor(client.color).setDescription(`\<:previous:1210625055965450290> \ | Song has been: \`Skipped\``);
+        const embed = new EmbedBuilder().setColor(client.color).setDescription(`\<:bye_bye:1210773614266286181>\ | Player has been: \`Disconnected\``);
 
-            return interaction.editReply({ embeds: [embed] });
-        }
+        return interaction.editReply({ embeds: [embed] });
     },
 };
