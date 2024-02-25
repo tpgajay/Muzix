@@ -27,7 +27,7 @@ module.exports = {
         if (Control.playerControl === "enable") {
             const ctrl = new EmbedBuilder()
                 .setColor(client.color)
-                .setDescription(`\<:icon_cross:1200797307805892651>\ | You can't use this command as the player control was enable!`);
+                .setDescription(`\<a:crosss:1210629485309730907>\ | You can't use this command as the player control was enable!`);
             return interaction.editReply({ embeds: [ctrl] });
         }
 
@@ -36,11 +36,11 @@ module.exports = {
         if (!player.isPaused) {
             await player.pause(true);
 
-            const embed = new EmbedBuilder().setColor(client.color).setDescription(`\<a:play_pause:1200812463764029583>\ | Song has been: \`Paused\``);
+            const embed = new EmbedBuilder().setColor(client.color).setDescription(`\<:PauseMusic:1210619874548654100>\ | Song has been: \`Paused\``);
 
             return interaction.editReply({ embeds: [embed] });
         } else {
-            const embed = new EmbedBuilder().setColor(client.color).setDescription(`\<:icon_cross:1200797307805892651>\ | Song is already: \`Paused\``);
+            const embed = new EmbedBuilder().setColor(client.color).setDescription(`\<a:crosss:1210629485309730907>\ | Song is already: \`Paused\``);
 
             return interaction.editReply({ embeds: [embed] });
         }
