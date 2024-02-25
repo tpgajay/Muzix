@@ -2,8 +2,8 @@ const { EmbedBuilder } = require("discord.js");
 const GControl = require("../../../settings/models/Control.js");
 
 module.exports = {
-    name: "stop",
-    description: "Stop or disconnect the player.",
+    name: "skip",
+    description: "Skip the current played song.",
     category: "Music",
     permissions: {
         bot: [],
@@ -19,12 +19,12 @@ module.exports = {
         premium: false,
     },
     run: async (client, interaction) => {
-        await interaction.deferReply({ ephemeral: false });
+        await interaction.deferReply({ ephemeral: true });
 
         const Control = await GControl.findOne({ guild: interaction.guild.id });
 
         // When button control "enable", this will make command unable to use. You can delete this
-        if (Control.playerControl === "disable") {
+        if (Control.playerControl === "enable") {
             const ctrl = new EmbedBuilder()
                 .setColor(client.color)
                 .setDescription(`<a:crosss:1210629485309730907> | You can't use this command as the player control was enable!`);
@@ -33,12 +33,16 @@ module.exports = {
 
         const player = client.poru.players.get(interaction.guild.id);
 
-        if (player.message) await player.message.delete();
+        if (!player || player.queue.size == 0) {
+            const embed = new EmbedBuilder().setDescription(`<a:crosss:1210629485309730907> | Next song was: \`Not found\``).setColor(client.color);
 
-        await player.destroy();
+            return interaction.editReply({ embeds: [embed] });
+        } else {
+            await player.stop();
 
-        const embed = new EmbedBuilder().setColor(client.color).setDescription(`\<:bye_bye:1210773614266286181>\ | Player has been: \`Disconnected\``);
+            const embed = new EmbedBuilder().setColor(client.color).setDescription(`\<:previous:1210625055965450290> \ | Song has been: \`Skipped\``);
 
-        return interaction.editReply({ embeds: [embed] });
+            return interaction.editReply({ embeds: [embed] });
+        }
     },
 };
