@@ -26,7 +26,7 @@ module.exports = {
 
         await player.destroy();
 
-        const embed = new EmbedBuilder().setColor(client.color).setDescription(`\ <a:bye_bye:1200807710858416138>\ | Player has been: \`Disconnected\``);
+        const embed = new EmbedBuilder().setColor(client.color).setDescription(`\ <:bye_bye:1210773614266286181>\ | Player has been: \`Disconnected\``);
 
         return interaction.editReply({ embeds: [embed] });
     },
