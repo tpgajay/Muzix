@@ -27,14 +27,14 @@ module.exports = {
         if (Control.playerControl === "enable") {
             const ctrl = new EmbedBuilder()
                 .setColor(client.color)
-                .setDescription(`<:icon_cross:1200797307805892651> | You can't use this command as the player control was enable!`);
+                .setDescription(`<a:crosss:1210629485309730907> | You can't use this command as the player control was enable!`);
             return interaction.editReply({ embeds: [ctrl] });
         }
 
         const player = client.poru.players.get(interaction.guild.id);
 
         if (!player.queue.length) {
-            const embed = new EmbedBuilder().setColor(client.color).setDescription(`\<:icon_cross:1200797307805892651>\ | Queue was: \`Empty\``);
+            const embed = new EmbedBuilder().setColor(client.color).setDescription(`\<a:crosss:1210629485309730907>\ | Queue was: \`Empty\``);
 
             return interaction.editReply({ embeds: [embed] });
         } else {
