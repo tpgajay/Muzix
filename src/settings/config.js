@@ -2,7 +2,7 @@ require("dotenv").config();
 
 module.exports = {
 
-  token: process.env.TOKEN || "const mySecret = process.env['TOKEN']", // <==== PASTE YOU TOKEN
+  TOKEN: "", // <==== PASTE YOU TOKEN
   prefix: process.env.PREFIX || "M!", // <==== SET YOU PRERIX BOT [ OWNER COMMANDS ]
   color: process.env.EMBED_COLOR || "#f308e3", // <==== YOU EMBEDED HEX COLOR
   owner: process.env.OWNER_ID || "const mySecret = process.env['OWNER_ID']", // <==== BOTS OWNER ID
