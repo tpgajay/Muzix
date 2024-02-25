@@ -27,20 +27,20 @@ module.exports = {
         if (Control.playerControl === "enable") {
             const ctrl = new EmbedBuilder()
                 .setColor(client.color)
-                .setDescription(`<:icon_cross:1200797307805892651> | You can't use this command as the player control was enable!`);
+                .setDescription(`<a:crosss:1210629485309730907> | You can't use this command as the player control was enable!`);
             return interaction.editReply({ embeds: [ctrl] });
         }
 
         const player = client.poru.players.get(interaction.guild.id);
 
         if (!player || player.queue.size == 0) {
-            const embed = new EmbedBuilder().setDescription(`<:icon_cross:1200797307805892651> | Next song was: \`Not found\``).setColor(client.color);
+            const embed = new EmbedBuilder().setDescription(`<a:crosss:1210629485309730907> | Next song was: \`Not found\``).setColor(client.color);
 
             return interaction.editReply({ embeds: [embed] });
         } else {
             await player.stop();
 
-            const embed = new EmbedBuilder().setColor(client.color).setDescription(`\<a:right_arrow:1200814300265205791> \ | Song has been: \`Skipped\``);
+            const embed = new EmbedBuilder().setColor(client.color).setDescription(`\<:previous:1210625055965450290> \ | Song has been: \`Skipped\``);
 
             return interaction.editReply({ embeds: [embed] });
         }
