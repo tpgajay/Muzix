@@ -1,4 +1,9 @@
-const { EmbedBuilder, ApplicationCommandOptionType } = require("discord.js");
+                        const embed = new EmbedBuilder()
+                            .setDescription(`<:on2:1210631398445154334> | Control has been set to: \`Enable\``)
+                            .setColor(client.color);
+
+                        interaction.editReply({ embeds: [embed] });
+                    })const { EmbedBuilder, ApplicationCommandOptionType } = require("discord.js");
 const GControl = require("../../../settings/models/Control.js");
 
 module.exports = {
@@ -48,12 +53,7 @@ module.exports = {
 
                 Control.save()
                     .then(() => {
-                        const embed = new EmbedBuilder()
-                            .setDescription(`<a:on2:1200808044951511091> | Control has been set to: \`Enable\``)
-                            .setColor(client.color);
 
-                        interaction.editReply({ embeds: [embed] });
-                    })
                     .catch((err) => {
                         interaction.editReply(`An error occured while setting the player control mode!`);
                         console.log(err);
@@ -64,7 +64,7 @@ module.exports = {
                 Control.save()
                     .then(() => {
                         const embed = new EmbedBuilder()
-                            .setDescription(`<a:on2:1200808044951511091> | Control has been changed to: \`Enable\``)
+                            .setDescription(`<:on2:1210631398445154334> | Control has been changed to: \`Enable\``)
                             .setColor(client.color);
 
                         interaction.editReply({ embeds: [embed] });
@@ -81,7 +81,7 @@ module.exports = {
                 Control.save()
                     .then(() => {
                         const embed = new EmbedBuilder()
-                            .setDescription(`<a:off_off:1200807969235935294> | Control has been set to: \`Disable\``)
+                            .setDescription(`<a:off_off:1210631912507572325> | Control has been set to: \`Disable\``)
                             .setColor(client.color);
 
                         interaction.editReply({ embeds: [embed] });
@@ -96,7 +96,7 @@ module.exports = {
                 Control.save()
                     .then(() => {
                         const embed = new EmbedBuilder()
-                            .setDescription(`<a:off_off:1200807969235935294> | Control has been changed to: \`Disable\``)
+                            .setDescription(`<a:off_off:1210631912507572325> | Control has been changed to: \`Disable\``)
                             .setColor(client.color);
 
                         interaction.editReply({ embeds: [embed] });
