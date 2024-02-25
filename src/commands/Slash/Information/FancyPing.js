@@ -20,7 +20,7 @@ module.exports = {
     run: async (client, interaction) => {
         await interaction.deferReply({ ephemeral: false });
 
-        const embed = new EmbedBuilder().setDescription(`<a:disk:1200807327616479364>  ${client.user.username} Network Ping!\n<a:Fancy_Dot:1200815258357477378> **API Latency:** __${Math.round(client.ws.ping)}ms__\n<a:Fancy_Dot:1200815258357477378> **Websocket Latency:** __${Math.round(client.ws.ping)}__`).setColor(client.color);
+        const embed = new EmbedBuilder().setDescription(`<:stats:1210778658596196352>  ${client.user.username} Network Ping!\n<a:dots:1210785677848092722> **API Latency:** __${Math.round(client.ws.ping)}ms__\n<a:dots:1210785677848092722> **Websocket Latency:** __${Math.round(client.ws.ping)}__`).setColor(client.color);
 
         return interaction.editReply({ embeds: [embed] });
     },
