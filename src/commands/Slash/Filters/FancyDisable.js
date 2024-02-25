@@ -27,7 +27,7 @@ module.exports = {
         await player.filters.clearFilters();
         await player.setVolume(100);
 
-        const embed = new EmbedBuilder().setDescription(`\<a:filter:1200818160828420130>\ | Filters has been: \`Cleared\``).setColor(client.color);
+        const embed = new EmbedBuilder().setDescription(`\<a:filter:1210779838269362237>\ | Filters has been: \`Cleared\``).setColor(client.color);
 
 
         return interaction.editReply({ embeds: [embed] });
