@@ -46,16 +46,16 @@ module.exports = {
                     iconURL: message.guild.iconURL({ dynamic: true }),
                 })
                 .addFields([
-                    { name: "\<a:Bot:1200818564198846594> | Client", value: `\`\`\`Servers: ${scount}\nChannels: ${ccount}\nUsers: ${mcount}\`\`\``, inline: false },
+                    { name: "\<:emoji_24:1210633582905655296>| Client", value: `\`\`\`Servers: ${scount}\nChannels: ${ccount}\nUsers: ${mcount}\`\`\``, inline: false },
                     {
-                        name: "<a:cpu:1200818663289274478> | CPU",
+                        name: "<:cpu:1210635358316789790> | CPU",
                         value: `\`\`\`Cpu: ${os.cpus().map((i) => `${i.model}`)[0]}\nLoad: ${percent.toFixed(
                             2
                         )}%\nPlatform: ${os.platform()}\`\`\``,
                         inline: false,
                     },
                     {
-                        name: "<a:server:1200818722227617922> | RAM",
+                        name: "<a:server:1210635630061555743> | RAM",
                         value: `\`\`\`RAM Used: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${(
                             os.totalmem() /
                             1024 /
@@ -65,13 +65,13 @@ module.exports = {
                         inline: false,
                     },
                     {
-                        name: "<a:discord:1200818807703355432> | Discord",
+                        name: "<:r_discord:1210635842935324703> | Discord",
                         value: `\`\`\`Discord.js: v${version}\nNode: ${process.version}\nAPI Websocket Ping: ${Math.round(
                             client.ws.ping
                         )}ms\`\`\``,
                         inline: false,
                     },
-                    { name: "<:System:1200815003721273344> | System", value: `\`\`\`Uptime: ${dDisplay + hDisplay + mDisplay + sDisplay}\`\`\``, inline: true },
+                    { name: "<a:System:1210636206027833345> | System", value: `\`\`\`Uptime: ${dDisplay + hDisplay + mDisplay + sDisplay}\`\`\``, inline: true },
                 ])
                 .setColor(client.color)
                 .setTimestamp(Date.now());
