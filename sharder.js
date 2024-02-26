@@ -1,6 +1,5 @@
 const { ClusterManager } = require("discord-hybrid-sharding");
-const config = require("../src/settings/config.js");
-require("dotenv").config();
+const config = require('opt/render/project/src/settings/config.js');
 
 const manager = new ClusterManager(`${__dirname}/index.js`, {
     totalShards: "auto",
