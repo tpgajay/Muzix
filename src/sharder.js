@@ -7,7 +7,7 @@ const manager = new ClusterManager(`${__dirname}/index.js`, {
     shardsPerClusters: 5,
     totalClusters: "auto",
     mode: "process",
-    TOKEN: ""
+    token: process.env.TOKEN || config.token, // <=== PASTE YOU TOKEN BOT HERE
 });
 
 manager.on("clusterCreate", (cluster) => console.log(`[INFO] Bot Launched Cluster ${cluster.id}`));
