@@ -1,6 +1,5 @@
 const { ClusterManager } = require("discord-hybrid-sharding");
-const token = process.env.TOKEN ||
-'your_default_token_here';
+const config = require("../src/settings/config.js");
 require("dotenv").config();
 
 const manager = new ClusterManager(`${__dirname}/index.js`, {
