@@ -2,7 +2,7 @@ require("dotenv").config();
 
 module.exports = {
 
-  TOKEN: "",
+  const token = process.env.TOKEN,
   ownerID: "",
   guildLogs: "",
   leaveTimeout: process.env.LEAVE_TIMEOUT || "20000", // <==== SET LEAVE TIMEOUT WHEN BOT WAS ALONE || 1000 = 1sec
